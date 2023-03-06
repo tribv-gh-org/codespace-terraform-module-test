@@ -13,9 +13,10 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  terraform_module_testing:
     runs-on: ubuntu-latest
-      environment: "lab"
+    environment: "lab"
+
     steps:
       - name: Check out Repository
       - uses: actions/checkout@v3
