@@ -16,6 +16,9 @@ jobs:
   terraform_module_testing:
     name: 'Terraform Module Testing'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./test
     environment: lab
 
     steps:
