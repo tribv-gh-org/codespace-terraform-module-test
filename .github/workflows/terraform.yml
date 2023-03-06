@@ -13,14 +13,30 @@ jobs:
     runs-on: ubuntu-latest
     environment: "lab"
     steps:
+      - name: Check out Repository
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Terraform Init
+        id: init
+        run: terraform init
+
+      - name: Terraform Format
+        id: fmt
+        run: terraform fmt -check
+      
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
+
+      - name: Terraform Plan
+        id: plan
+        if: github.event_name == 'pull_request'
+        run: terraform plan -var "tenant_id=${{ vars.AZURERM_TENANT_ID }}" -var "subscription_id=${{ vars.AZURERM_SUBSCRIPTION_ID }}" -var "client_id=${{ vars.AZURERM_CLIENT_ID }}" -var "client_secret=${{ secrets.AZURERM_CLIENT_SECRET }}" -input=false
+        continue-on-error: true
+      
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve -var "tenant_id=${{ vars.AZURERM_TENANT_ID }}" -var "subscription_id=${{ vars.AZURERM_SUBSCRIPTION_ID }}" -var "client_id=${{ vars.AZURERM_CLIENT_ID }}" -var "client_secret=${{ secrets.AZURERM_CLIENT_SECRET }}" -input=false
