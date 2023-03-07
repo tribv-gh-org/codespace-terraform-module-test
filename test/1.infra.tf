@@ -7,4 +7,5 @@ module "landingzone-infra" {
   # v0.0.4 Medium update
   # v0.0.5 Add bastion host
   # v0.0.6 Fix bastion host Subnet
+  # v0.0.7 Fix AzureBastionSubnet
 }
