@@ -6,6 +6,7 @@ module "linux-vm" {
 
 module "windows-vm" {
   source  = "app.terraform.io/tribv-tfc-org/windows-vm/azurerm"
-  version = "0.0.2"
+  version = "0.0.3"
   # v0.0.2 update
+  # v0.0.3 Fix bug
 }
