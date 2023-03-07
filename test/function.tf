@@ -13,5 +13,4 @@ module "azure-function-test" {
   application_insights_name            = "ethan-func-ai"
   inbound_private_endpoint_subnet_name = "ethan-sbn02"
   function_app_name                    = "ethan-func-app-test"
-  functions_runtime                    = "python|3.9"
 }
