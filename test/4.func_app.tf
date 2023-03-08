@@ -1,6 +1,6 @@
 module "azure-function-test" {
   source  = "app.terraform.io/tribv-tfc-org/azure-function-test/azurerm"
-  version = "0.1.3"
+  version = "0.1.4"
   # insert required variables here
 
   infra_resource_group_name            = "rg-infrarg-lz-2023"
