@@ -6,7 +6,7 @@ module "azure-function-test" {
   infra_resource_group_name            = "rg-infrarg-lz-2023"
   resource_group_name                  = "rg-func-app-2023"
   vnet_name                            = "ethan-vnet"
-  vnet_integration_subnet_name         = "ethan-sbn01"
+  vnet_integration_subnet_name         = "ethan-sbn03" #deligated subnet for FuncApp
   inbound_private_endpoint_subnet_name = "ethan-sbn02"
   functions_storage_account_name       = "stethantestdev12345678"
   functions_storage_account_rg_name    = "rg-ethan-vm-2023"
