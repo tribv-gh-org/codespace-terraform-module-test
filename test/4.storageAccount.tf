@@ -11,7 +11,6 @@ module "storage-account" {
   action_group_present      = false
   application_tagvalue      = "ethantest"
 
-
   resource_group_name                 = "rg-ethan-vm-2023"
   location                            = "West Europe"
   storage_account_name                = "stethantestdev12345678"
