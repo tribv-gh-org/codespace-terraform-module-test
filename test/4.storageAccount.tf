@@ -8,14 +8,14 @@ module "storage-account" {
   subnet_name                         = "ethan-sbn01"
   resource_group_name                 = "rg-ethan-vm-2023"
   location                            = "West Europe"
-  storage_account_name                = "stadvautotestdev12345678"
+  storage_account_name                = "stethantestdev12345678"
   blob_container_names                = ["dev"]
   blob_container_public_access_levels = ["blob", "container", "private"]
-  # queue_name           = "advautotestqueue"
-  # table_name           = "advautotesttable"
-  # file_share_name      = "advautotestfileshare"
+  # queue_name           = "ethantestqueue"
+  # table_name           = "ethantesttable"
+  # file_share_name      = "ethantestfileshare"
   keyvault_name        = "ethan-kv-adm"
   action_group_name    = "ethanag"
   action_group_present = false
-  application_tagvalue = "advautotest"
+  application_tagvalue = "ethantest"
 }
