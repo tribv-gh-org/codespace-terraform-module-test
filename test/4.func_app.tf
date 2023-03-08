@@ -14,4 +14,6 @@ module "azure-function-test" {
   keyvault_name                        = "ethan-kv-adm"
   application_insights_name            = "ethan-func-ai"
   function_app_name                    = "ethan-func-app-test"
+  action_group_name                    = "ethanag"
+  action_group_present                 = false
 }
