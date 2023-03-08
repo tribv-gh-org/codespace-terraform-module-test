@@ -9,8 +9,8 @@ module "storage-account" {
   resource_group_name                 = "rg-ethan-vm-2023"
   location                            = "West Europe"
   storage_account_name                = "stethantestdev12345678"
-  blob_container_names                = ["dev"]
-  blob_container_public_access_levels = ["blob", "container", "private"]
+  # blob_container_names                = ["dev"]
+  # blob_container_public_access_levels = ["blob", "container", "private"]
   # queue_name           = "ethantestqueue"
   # table_name           = "ethantesttable"
   # file_share_name      = "ethantestfileshare"
