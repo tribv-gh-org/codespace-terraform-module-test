@@ -1,6 +1,6 @@
 module "storage-account" {
   source  = "app.terraform.io/tribv-tfc-org/storage-account/azurerm"
-  version = "0.0.5"
+  version = "0.0.6"
   # insert required variables here
 
   infra_resource_group_name = "rg-infrarg-lz-2023"
